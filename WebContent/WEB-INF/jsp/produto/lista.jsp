@@ -7,6 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <head>
 <script type="text/javascript" src="<c:url value="/js/jquery.js"/>"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,7 +21,9 @@
 		}
 	</script>
 
+
 	<h1>Produtos</h1>
+	<h2><fmt:message key="mensagem.bemvindo"/></h2>
 	<div id="mensagem"></div>
 	
 	<table width="100%">
@@ -62,8 +65,11 @@
 		
 	</table>
 	<c:url value="/produto/formulario" var="urlAdicionar"></c:url>
-	<a href="${urlAdicionar}">Adicionar um produto</a>
+	<a href="${urlAdicionar}"><fmt:message key="mensagem.novoProduto"/></a>
 	<c:set var="nome" value="João da Silva" />
-<c:out value="${nome}" />
+	<c:out value="${nome}" />	
+	
+	<c:import url="../_comum/rodape.jsp"></c:import>
+
 </body>
 </html>
